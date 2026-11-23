@@ -1,1 +1,17 @@
+# Dependencies
 **node_modules/
+
+# Build output
+**/dist/
+**/dist-ssr/
+
+# Vitest
+**/.vitest/
+**/coverage/
+
+# TypeScritp build cache
+**/*.tsbuildinfo
+
+# Local environment files
+.env*
+!.env.example
