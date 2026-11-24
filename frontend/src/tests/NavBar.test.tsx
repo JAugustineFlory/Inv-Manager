@@ -9,9 +9,15 @@ import NavBar from '../components/NavBar.tsx';
 afterEach(cleanup);
 
 function renderNavBar() {
+
+  const user = {
+    id: 1,
+    name: 'test User',
+  }
+
   return render(
     <MemoryRouter>
-      <NavBar />
+      <NavBar user={user} />
     </MemoryRouter>
   );
 }
@@ -34,12 +40,12 @@ describe('NavBar', () => {
     ).toBeTruthy();
 
     expect(
-      screen.getByRole('link', {name: 'My Items' }),
+      screen.getByRole('link', {name: 'My Inventory' }),
     ).toBeTruthy();
 
     const globalItemsLink = screen.getByRole('link', {
-      name: 'All Items Globally',
+      name: 'All Inventories',
     });
-    expect(globalItemsLink.getAttribute('href')).toBe('/AllItemsGlobal');
+    expect(globalItemsLink.getAttribute('href')).toBe('/AllInventories');
   });
 });
