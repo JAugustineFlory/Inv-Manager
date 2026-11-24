@@ -1,18 +1,19 @@
 import { NavLink } from 'react-router-dom';
+import defaultProfile from '../assets/defaultprofile.png';
 
 class User {
   name: string;
   icon: string;
 
-  constructor(name = '', icon = '../assets/defaultprofile.png') {
+  constructor(name = '', icon = defaultProfile) {
     this.name = name;
     this.icon = icon;
   }
 };
 
-const user = new User('Jerry');
-
 function NavBar() {
+  const user = new User();
+  
   return (
     <>
       <h1>Inv-Manager</h1>
@@ -24,7 +25,7 @@ function NavBar() {
               <div className="icon-pill">
                 <img src={user.icon} alt="profile icon" />
               </div>
-              <NavLink to={`/items/${user.name}`}>My Items</NavLink>
+              <NavLink to={`/items/myInventory`}>My Items</NavLink>
             </>
         )}
         <NavLink to="/AllItemsGlobal">All Items Globally</NavLink>

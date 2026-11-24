@@ -12,6 +12,10 @@ export default defineConfig({
     coverage: {
       provider: 'v8',
       enabled: true,
+      include: ['src/**/*.{ts,tsx}'],
+      exclude: ['src/tests/**'],
+      reporter: ['text', 'html', 'lcov'],
     },
+    environment: 'jsdom',
   },
 })
