@@ -1,1 +1,20 @@
+# Dependencies
 **node_modules/
+
+# Build output
+**/dist/
+**/dist-ssr/
+
+# Vitest
+**/.vitest/
+**/coverage/
+
+# Local VS Code extension prototype
+/tools/tsx-coverage-visibility/
+
+# TypeScritp build cache
+**/*.tsbuildinfo
+
+# Local environment files
+.env*
+!.env.example
