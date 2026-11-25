@@ -1,6 +1,7 @@
 import { Routes, Route } from 'react-router-dom';
 
 import NavBar from './components/NavBar.tsx';
+import Items from './components/Items.tsx';
 
 import './App.css';
 
@@ -8,7 +9,7 @@ import './App.css';
 function App() {
 
   return (
-    <body>
+    <>
       <header>
         <NavBar user={null} />
       </header>
@@ -16,12 +17,10 @@ function App() {
       <main>
         <Routes>
           <Route path="/" element={<p>Welcome to Inv-Manager</p>} />
-          <Route path="/items/all" element={<p>All Items</p>} />
-          <Route path="/items/:userName" element={<p>My Items</p>} />
-          <Route path="/AllItemsGlobal" element={<p>All Items Globally</p>} />
+          <Route path="/items/:option" element={<Items />} />
         </Routes>
       </main>
-    </body>
+    </>
   )
 }
 

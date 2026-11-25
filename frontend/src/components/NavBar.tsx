@@ -29,7 +29,7 @@ function NavBar({ user }: NavBarProps) {
               <NavLink to={`/items/myInventory`}><p className="btn">My Inventory</p></NavLink>
             </>
         )}
-        <NavLink to="/AllInventories"><p className="btn">All Inventories</p></NavLink>
+        <NavLink to={'/items/all'}><p className="btn">All Inventories</p></NavLink>
       </div>
     </nav>
   )
