@@ -16,7 +16,7 @@ function App() {
 
       <main>
         <Routes>
-          <Route path="/" element={<p>Welcome to Inv-Manager</p>} />
+          <Route path="/" element={<h2>Welcome to Inv-Manager</h2>} />
           <Route path="/items/:option" element={<Items />} />
         </Routes>
       </main>

@@ -1,4 +1,8 @@
-
+body {
+  width: 80vw;
+  max-width: 1200px;
+  margin: 0 auto;
+}
 
 
 /* Globals */
@@ -39,6 +43,7 @@ nav {
 }
 .profile {
   width: fit-content;
+  min-width: 20%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -50,4 +55,12 @@ nav {
 .icon-pill {
   max-width: 10vw;
   align-self: flex-end;
+  margin-right: 5px;
+}
+.icon-pill img {
+  max-width: 100px;
+  border-radius: 50%;
+}
+.view-btn {
+  display: flex;
 }
