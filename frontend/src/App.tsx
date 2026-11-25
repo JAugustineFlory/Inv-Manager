@@ -8,9 +8,9 @@ import './App.css';
 function App() {
 
   return (
-    <>
+    <body>
       <header>
-        <NavBar />
+        <NavBar user={null} />
       </header>
 
       <main>
@@ -21,7 +21,7 @@ function App() {
           <Route path="/AllItemsGlobal" element={<p>All Items Globally</p>} />
         </Routes>
       </main>
-    </>
+    </body>
   )
 }
 

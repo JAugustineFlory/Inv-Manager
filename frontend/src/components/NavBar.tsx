@@ -16,8 +16,8 @@ function NavBar({ user }: NavBarProps) {
 
   
   return (
-    <>
-      <h1>Inv-Manager</h1>
+    <nav>
+      <NavLink to={'/'}><h1 className="logo btn">Inv-Manager</h1></NavLink>
       <div className="profile">
         {!user ? (
             <button className="icon-pill">Log in</button>
@@ -26,12 +26,12 @@ function NavBar({ user }: NavBarProps) {
               <div className="icon-pill">
                 <img src={user.icon ?? defaultProfile} alt="profile icon" />
               </div>
-              <NavLink to={`/items/myInventory`}>My Inventory</NavLink>
+              <NavLink to={`/items/myInventory`}><p className="btn">My Inventory</p></NavLink>
             </>
         )}
-        <NavLink to="/AllInventories">All Inventories</NavLink>
+        <NavLink to="/AllInventories"><p className="btn">All Inventories</p></NavLink>
       </div>
-    </>
+    </nav>
   )
 };
 
