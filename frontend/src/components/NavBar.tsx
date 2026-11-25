@@ -20,7 +20,7 @@ function NavBar({ user }: NavBarProps) {
       <h1>Inv-Manager</h1>
       <div className="profile">
         {!user ? (
-            <div className="icon-pill">Log in</div>
+            <button className="icon-pill">Log in</button>
           ) : (
             <>
               <div className="icon-pill">

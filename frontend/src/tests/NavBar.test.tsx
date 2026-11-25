@@ -1,4 +1,4 @@
-// Dependencies
+// Dependencies-----------------------------
 import { afterEach, describe, expect, it } from 'vitest';
 import { cleanup, render, screen } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
@@ -8,8 +8,8 @@ import NavBar from '../components/NavBar.tsx';
 
 afterEach(cleanup);
 
+// Helper Functions -------------------------
 function renderNavBar() {
-
   const user = {
     id: 1,
     name: 'test User',
@@ -22,6 +22,17 @@ function renderNavBar() {
   );
 }
 
+function renderNotSignedInNavBar() {
+
+  return render(
+    <MemoryRouter>
+      <NavBar user={null} />
+    </MemoryRouter>
+  )
+}
+
+
+// Tests ---------------------------
 describe('NavBar', () => {
   it('Shows Logo', () => {
     renderNavBar();
@@ -47,5 +58,16 @@ describe('NavBar', () => {
       name: 'All Inventories',
     });
     expect(globalItemsLink.getAttribute('href')).toBe('/AllInventories');
+  });
+});
+
+describe('Not Signed in NavBar', () => {
+  it('If not logged in, Display log in', () => {
+    renderNotSignedInNavBar();
+    screen.debug();
+
+    expect(
+      screen.getByText('Log in'),
+    ).toBeTruthy();
   });
 });
