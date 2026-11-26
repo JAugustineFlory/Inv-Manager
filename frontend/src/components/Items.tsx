@@ -21,6 +21,7 @@ function Items() {
   return(
     <div className="item-list">
       <h2>{view.title}</h2>
+      <hr />
       {view.list.map((item) => (
         <div className="item-card" key={item.id}>
           <p id="name">{item.name}</p>
