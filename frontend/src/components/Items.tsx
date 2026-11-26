@@ -11,7 +11,7 @@ function Items() {
     all: { title: 'All Inventories', list: sampleItems },
     myInventory: { title: 'My Inventory', list: sampleItems.slice(0, 1) },
   };
-  
+
   const view = views[option ?? ''] ?? { 
     title: 'Inventory not found', 
     list: [] 
@@ -23,9 +23,14 @@ function Items() {
       <h2>{view.title}</h2>
       {view.list.map((item) => (
         <div className="item-card" key={item.id}>
-          <p>{item.name}</p>
-          <p>{item.description}</p>
-          <p>{item.quantity}</p>
+          <p id="name">{item.name}</p>
+          <p id="description">{item.description}</p>
+          <div id="quantity">
+            <p>Quantity:</p>
+            {item.quantity}
+          </div>
+          <button id="edit-btn">edit</button>
+          <button id="delete-btn">delete</button>
         </div>
       ))}
     </div>
