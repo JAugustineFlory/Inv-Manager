@@ -1,4 +1,9 @@
-
+body {
+  width: 80vw;
+  max-width: 1200px;
+  margin: 0 auto;
+  /* background-color: rgb(199, 171, 171); */
+}
 
 
 /* Globals */
@@ -7,19 +12,22 @@ button, .btn, NavLink {
   width: fit-content;
   margin: 10px;
   padding: 10px;
-  text-decoration: 0;
   background-color: #11111111;
   border: none;
+  cursor: pointer;
 }
 button:hover, .btn:hover {
   background-color: rgba(0, 0, 0, 0.445);
   color: white;
 }
+a {
+  text-decoration: none;
+}
 
 
 /* Components */
 nav {
-  background: green;
+  /* background: green; */
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -37,6 +45,7 @@ nav {
 }
 .profile {
   width: fit-content;
+  min-width: 20%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -48,4 +57,48 @@ nav {
 .icon-pill {
   max-width: 10vw;
   align-self: flex-end;
+  margin-right: 5px;
+}
+.icon-pill img {
+  max-width: 100px;
+  border-radius: 50%;
+}
+.view-btn {
+  display: flex;
+}
+
+/* Items */
+.item-card {
+  height: fit-content;
+  display: grid;
+  background-image: repeating-linear-gradient(
+    to right,
+    rgb(8, 126, 126), gray
+  );
+  padding: 5%;
+  border-radius: 15px;
+  margin: 2% 0;
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: 4fr 6fr 1fr 1fr;
+  grid-template-areas:
+  "name description edit delete"
+  "quantity .. .. .."
+  ;
+  column-gap: 10px;
+  color: white;
+  font-size: 1.3em;
+}
+#name {grid-area: name;}
+#description {grid-area: description;}
+#quantity {grid-area: quantity;}
+#edit-btn {grid-area: edit;}
+#delete-btn {grid-area: delete;}
+
+.item-card button {
+  width: 100%;
+  color: white;
+  font-size: .8em;
+  height: fit-content;
+  padding: 10px 0;
+  border: white 1px groove;
 }
