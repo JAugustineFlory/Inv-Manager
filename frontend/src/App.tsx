@@ -11,7 +11,7 @@ function App() {
   return (
     <>
       <header>
-        <NavBar user={'james'} />
+        <NavBar user={null} />
       </header>
 
       <main>
