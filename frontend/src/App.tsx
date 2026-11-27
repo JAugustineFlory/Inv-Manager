@@ -1,4 +1,4 @@
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, NavLink } from 'react-router-dom';
 
 import NavBar from './components/NavBar.tsx';
 import Items from './components/Items.tsx';
@@ -33,10 +33,11 @@ function App() {
     ) : (
       <>
         <header>
-          
+          <NavLink to={'/'}><h1 className="logo btn login-logo">Inv-Manager</h1></NavLink>
         </header>
         <Routes>
-          <Route path="/Login" element={<Login />}></Route>
+          <Route path="/" element={<Login />}></Route>
+          <Route path="/items/all" element={<Items />} />
         </Routes>
       </>
     )
