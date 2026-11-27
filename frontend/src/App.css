@@ -1,9 +1,21 @@
+:root {
+  --card-bkg: repeating-linear-gradient(rgb(8, 126, 126), gray);
+  --card-bkg-right: repeating-linear-gradient(
+    to right,
+    rgb(8, 126, 126), gray
+  );
+}
+
 /* Globals */
 body {
   width: 80vw;
   max-width: 1200px;
   margin: 0 auto;
   /* background-color: rgb(199, 171, 171); */
+}
+h2 {
+  font-size: 2em;
+  margin: 15px 3%;
 }
 
 button, .btn, NavLink {
@@ -29,7 +41,6 @@ a {
 
 /* Components */
 nav {
-  /* background: green; */
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -37,12 +48,13 @@ nav {
   font-size: 1.5em;
   height: fit-content;
   padding: 0 1%;
+  margin-top: 15px;
 }
 .logo {
   padding: 10px;
   border: solid black 1px;
   border-radius: 15px;
-  background-image: linear-gradient(cyan, gray);
+  background-image: var(--card-bkg);
   margin: 10px;
 }
 .profile {
@@ -52,7 +64,7 @@ nav {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-image: linear-gradient(cyan, gray);
+  background-image: var(--card-background);
   padding: 3px 10px;
   border-radius: 15px;
 }
@@ -109,4 +121,36 @@ nav {
   height: fit-content;
   padding: 10px 0;
   border: white 1px groove;
+}
+
+/* Login/Signup */
+.login-main {
+  display: flex;
+
+}
+form.login {
+  height: 50vh;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  margin: auto;
+  background-image: var(--card-background);
+}
+form.login input, .login-btn {
+  width: 40vw;
+  max-width: 400px;
+  height: 2em;
+  border-radius: 15px;
+  margin: 2px auto;
+  padding: 10px 15px;
+  font-size: .8em;
+}
+
+.login-btn {
+  margin-top: 20px;
+  background-color: rgb(194, 150, 38);
+  color: white;
+  font-size: 1.3em;
+  max-width: 300px;
 }
