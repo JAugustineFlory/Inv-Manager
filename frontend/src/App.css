@@ -1,9 +1,20 @@
+:root {
+  --card-bkg: repeating-linear-gradient(rgb(8, 126, 126), gray);
+  --card-bkg-right: repeating-linear-gradient(
+    to right,
+    white, 5%, rgb(2, 92, 92));
+  --card-bkg2: repeating-linear-gradient(to right, rgb(161, 223, 223), rgb(101, 235, 228));
+}
+
 /* Globals */
 body {
   width: 80vw;
   max-width: 1200px;
   margin: 0 auto;
-  /* background-color: rgb(199, 171, 171); */
+}
+h2 {
+  font-size: 2em;
+  margin: 15px 3%;
 }
 
 button, .btn, NavLink {
@@ -29,7 +40,6 @@ a {
 
 /* Components */
 nav {
-  /* background: green; */
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -37,12 +47,13 @@ nav {
   font-size: 1.5em;
   height: fit-content;
   padding: 0 1%;
+  margin-top: 15px;
 }
 .logo {
   padding: 10px;
   border: solid black 1px;
   border-radius: 15px;
-  background-image: linear-gradient(cyan, gray);
+  background-image: var(--card-bkg);
   margin: 10px;
 }
 .profile {
@@ -52,7 +63,7 @@ nav {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-image: linear-gradient(cyan, gray);
+  background-image: var(--card-background);
   padding: 3px 10px;
   border-radius: 15px;
 }
@@ -109,4 +120,50 @@ nav {
   height: fit-content;
   padding: 10px 0;
   border: white 1px groove;
+}
+
+/* Login/Signup */
+.login-main {
+  display: flex;
+  justify-content: space-evenly;
+}
+form.login {
+  height: 50vh;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  margin: auto;
+  background-image: none;
+}
+form.login input, .login-btn {
+  max-width: 400px;
+  height: 2em;
+  border-radius: 15px;
+  margin: 2px auto;
+  padding: 10px 15px;
+  font-size: .8em;
+  background: var(--card-bkg2)
+}
+.login-btn {
+  margin-top: 20px;
+  background-color: rgb(194, 150, 38);
+  color: white;
+  font-size: 1.3em;
+  max-width: 300px;
+}
+.login-logo {
+  background-image: var(--card-bkg-right);
+  width: 45vw;
+  height: 10vh;
+  border-radius: 408px;
+  display: flex;
+  padding-left: 5%;
+  box-sizing: border-box;
+  border: none;
+}
+.info {
+  display: flex;
+  flex-direction: column;
+  margin: 2%;
 }
