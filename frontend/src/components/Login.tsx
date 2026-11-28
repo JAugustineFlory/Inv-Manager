@@ -1,8 +1,6 @@
 import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 
-import Items from '../components/Items.tsx';
-
 function Login() {
   const [LogSign, setLogSign] = useState(true);
 
@@ -40,7 +38,7 @@ function Login() {
             <li>View All global inventories</li>
             <li>Easy overv</li>
           </ul>
-          <NavLink to="/items/all" element={<Items />}>View Catalog</NavLink>
+          <NavLink to="/items/all">View Catalog</NavLink>
         </div>
       </div>
     </>

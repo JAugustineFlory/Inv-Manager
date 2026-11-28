@@ -6,7 +6,9 @@ import Login from './components/Login.tsx';
 
 import './App.css';
 
-class User_Session {
+class UsersSession {
+  inv:string;
+  loggedIn:boolean;
   constructor(inv='global', loggedIn=false) {
     this.inv = inv;
     this.loggedIn = loggedIn;
@@ -14,7 +16,7 @@ class User_Session {
 }
 
 function App() {
-  const current_user = new User_Session();
+  const current_user = new UsersSession();
 
   return (
     current_user.loggedIn ? (
@@ -37,7 +39,7 @@ function App() {
         </header>
         <Routes>
           <Route path="/" element={<Login />}></Route>
-          <Route path="/items/all" element={<Items />} />
+          <Route path="/items/:option" element={<Items />} />
         </Routes>
       </>
     )
